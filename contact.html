@@ -1,0 +1,221 @@
+<style>
+    nav{
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    min-height:10vh;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top:0;
+    
+}
+a{
+    text-decoration: none;
+}
+nav a{
+    color:black;
+}
+nav a:hover{
+    color:#f84258;
+    text-decoration: none;
+
+}
+#login{
+    color:#f84258;
+}
+.logo h3{
+    font-family: 'Sacramento', cursive;
+    font-weight: 500;
+    text-align: center;
+    font-size:45px;
+}
+.logo-name{
+     color:#f84258;
+}
+.logo-name:hover{
+    color:#f84258;
+    text-decoration: none;
+}
+
+.nav-links{
+    display:flex;
+    list-style: none;
+    width:50%;
+    justify-content: space-around;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size:14px;
+    font-family: 'Montserrat', sans-serif;
+}
+.burger div{
+    background-color:#f84258;
+    width:25px;
+    height:3px;
+    margin:5px;
+    transition: all 0.3s ease;
+}
+
+.burger{
+    display:none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width:80%;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+       position:absolute;
+       right:0px;
+       height:90vh;
+       top:10vh;
+       background-color: #232323;
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+       width:60%;
+       transform:translateX(100%);
+       transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+    nav a{
+        color:rgb(231, 216, 216);
+    }
+    nav a:hover{
+        color:#f7f7f7;
+        text-decoration: none;
+    
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MERLIN FASHION CLUB</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Nova+Cut&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <script>
+        const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li')
+    
+    burger.addEventListener('click',()=> {
+        //toggle nav
+        nav.classList.toggle('nav-active');
+
+          // animate links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation){
+                link.style.animation = ''
+            }
+            else{
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.6 }s`;
+            }  
+        });
+        //burger animation
+        burger.classList.toggle('toggle');
+  
+    });
+
+ 
+}
+
+
+navSlide();
+    </script>
+</head>
+<style>
+   .slogan{
+    font-family: 'Beth Ellen', cursive;
+    color:black;
+    font-size: 36px;
+  }
+   .author{
+    font-family: 'Nova Cut', cursive;
+    color:black;
+  } 
+  .contact-info{
+    padding-top:170px;
+  }
+</style>
+<body> 
+    <!-- navbar -->
+      <nav>
+        <div class="logo">
+          <h3><a href="merlin.html" class="logo-name">Merlin Fashion</a></h3>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="contact.html">ContactUs</a></li>
+          <li><a href="login.html" id="login">Login</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    <!-- navbar -->
+    <center>
+      <div class="contact-info">
+        <p class="slogan">"Merlin Fashion."</p>
+        <p class="author">Shivani Singh</p>
+        
+        <p class="author">shivanisingh260500@gmail.com</p>
+          <p class="author"><a href="https://www.linkedin.com/in/shivani-singh-86b640192/" class="logo-name">On LinkedIn</a></p>
+      </div>
+    </center>
+      
+  
+  <script type="text/javascript" src="js/nav.js"></script>
+  </body>
+</html>

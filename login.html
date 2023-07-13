@@ -1,0 +1,179 @@
+
+<style>
+    
+.login-image{
+    width:440px;
+    object-fit: cover;
+}
+.login{
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+    padding-top:110px;
+}
+.vl{
+    border-left: 1px solid #e85a48;
+    height: 400px;
+  }
+@media screen and (max-width:992px) and (min-width:777px){
+    .vl{
+        height:280px;
+    }
+}
+@media screen and (max-width:778px) and (min-width:591px){
+    .vl{
+        height:200px;
+    }
+}
+@media screen and (max-width:592px) and (min-width:421px){
+    .vl{
+        height:170px;
+    }
+}
+
+@media screen and (max-width:423px){
+    .vl{
+        height:120px;
+    }
+}
+.login-form{
+    text-align: center;
+    padding-bottom: 20px;
+   
+}
+.login-button{
+    display:inline-block;
+    width: 100px;
+    height: 40px;
+    color:#e85a48;
+    border-radius: 4px;
+    background:#ffffff;
+    border:none;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+.login-button:hover{
+    background-color:#eae7dc;
+    
+    
+}
+.back-button{
+    display:inline-block;
+    width: 100px;
+    height: 40px;
+    color:#5d5c61;
+    background: none;
+    border:none;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.back-button:hover{
+    color:#414044;
+}
+
+hr{
+    border: 1px solid #caa529;
+    max-width:70px;
+    margin:auto;
+    
+}
+h4.other-login-op{
+    text-align:center;
+    font-size: 18px;
+    font-weight: 900;
+    color:#5d5c61;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding-bottom: 20px;
+    
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script>
+        var user = document.getElementById("username");
+var pass =  document.getElementById("password");
+var btn = document.querySelector(".login-button");
+
+function checkvalidity(){
+        if(user.value == "" || pass.value ==""){
+            alert("Please provide Username & Password ")
+        }
+    
+}
+
+btn.addEventListener("click", checkvalidity)
+    </script>
+    
+</head>
+<body style="background-color: #ffffff ;">
+    <!-- navbar -->
+    <nav>
+      <div class="logo">
+        <h3><a href="merlin.html" class="logo-name">Merlin Fashion</a></h3>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="contact.html">ContactUs</a></li>
+        <li><a href="login.html" id="login">Login</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  <!-- navbar --> 
+
+    <div class="login">
+      <img src="images/login-images/login.png" alt="">
+      <div class="vl"></div>
+      <img src="images/login-images/undraw_empty_cart_co35.png" class="login-image" alt="">
+    </div>
+    
+    <center>LOGIN HERE 🦄</center> 
+    <br><br>
+  
+    <div class="login-form">
+      <input type="text" placeholder="Username Or Email" id="username">
+      <br><br> 
+      <input type="password" placeholder="Password" id="password"><br><br>
+      <a href="index.html"><button class="login-button">LOG IN</button></a>&nbsp;&nbsp;
+      <a href="index.html"> <button class="back-button">BACK </button></a> 
+    </div>
+
+    <hr>
+    <br>
+
+    <h4 class="other-login-op">Or login with</h4>
+    <br>
+    
+    <div class="social">
+      <a href="https://google.com"><img src="images/icons/icon-google.png" class="other-login-op-img" height="33" width="30"alt=""></a>&nbsp;&nbsp;
+      <a href="https://facebook.com"><img src="images/icons/fb.png" class="other-login-op-img" height="30" width="35" alt=""></a>&nbsp;&nbsp;
+      <a href="https://google.com"><img src="images/icons/favicon.jpg" class="other-login-op-img" height="32" width="35"alt=""></a>
+    </div>
+
+  <script type="text/javascript" src="js/nav.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
